@@ -1,13 +1,28 @@
+import React,{useState, useEffect} from 'react';
 import './App.css';
-import Card from './components/Card.jsx';
+import axios from 'axios'
+
 import Cards from './components/Cards.jsx';
-import NavBar from './components/Nav';
-import characters, { Rick } from './data.js';
+import NavBar from './components/NavBar';
+
+
 
 function App() {
-   function onSearch(characterID){
-      window.alert(characterID);
+
+   const [characters, setCharacters] = useState([])
+  
+  
+   function onSearch(id) {
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+         if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else {
+            window.alert('¡No hay personajes con este ID!');
+         }
+      });
    }
+
+   
    // console.log(characters)
    return (
       <div className='App'>
