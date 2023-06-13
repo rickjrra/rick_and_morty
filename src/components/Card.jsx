@@ -1,7 +1,8 @@
+import './Card.css'
 export default function Card({char, onClose}) { // obj
    const {id,name,gender,species,origin,image,status} = char
    return (
-      <div>
+      <div className="cardST">
          <button onClick={onClose}>X</button>
          <h2>{name}</h2>
          <h2>{status}</h2>
