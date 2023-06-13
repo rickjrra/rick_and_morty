@@ -4,7 +4,7 @@ import './Nav.css'
 
 export default function NavBar({onSearch}) {
     return(
-        <div>
+        <div className="nav" >
             <SearchBar onSearch={onSearch} />
         </div>
     )

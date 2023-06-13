@@ -15,20 +15,31 @@ function App() {
    function onSearch(id) {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
+            let exist = characters.find((ch)=>ch.id===data.id)
+            if(exist){
+              alert("ya existe")    
+            } else{
+              setCharacters((oldChars) => [...oldChars, data]);
+            }
+           
          } else {
             window.alert('¡No hay personajes con este ID!');
          }
       });
    }
 
-   
-   // console.log(characters)
+   function onClose(id){
+      setCharacters((oldChars) => {
+         return oldChars.filter((ch)=>ch.id !== id)
+      });
+   }
+
+
    return (
       <div className='App'>
          <div>Bienvenidos!!!!</div>
          <NavBar onSearch ={onSearch} />
-         <Cards characters={characters} onClose={() => window.alert('Emulamos que se cierra la card')}/>
+         <Cards onClose={onClose} characters={characters}/>
       </div>
    );
 }
