@@ -1,4 +1,37 @@
 .cardST{
-    border: 10px  solid rgb(51, 0, 255);
-    background-color: rgb(21, 177, 224);
+    border: 5px  solid rgb(51, 0, 255);
+    border-radius: 4px;
+    width: 140px;
+    font-size: 0.5em;
+}
+
+.cardST img{
+    width: 140px;
+}
+
+.cardST button{
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 4px 8px;
+    cursor: pointer;
+    background-color: rgb(236, 10, 66);
+    border: none;
+    border-radius: 8px;
+    border: 1px solid rgb(236, 10, 66);
+}
+
+.cardST button:hover{
+    background-color: rgb(250, 234, 238);
+    border: 1px solid rgb(23, 22, 22);
+}
+
+.close{
+    display: flex;
+    justify-content: flex-end;
+}
+.info{
+    text-align: center;
+}
+.info img{
+    border-radius: 6px;
 }

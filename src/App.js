@@ -10,7 +10,11 @@ import NavBar from './components/NavBar';
 function App() {
 
    const [characters, setCharacters] = useState([])
-  
+
+   const [title, setTitle] = useState("Bienvenidos")
+   const seteandoTitle = (str)=>{
+      setTitle(str)
+   }
   
    function onSearch(id) {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
@@ -37,9 +41,10 @@ function App() {
 
    return (
       <div className='App'>
-         <div>Bienvenidos!!!!</div>
+
+         <h1>{title}</h1>
          <NavBar onSearch ={onSearch} />
-         <Cards onClose={onClose} characters={characters}/>
+         <Cards onClose={onClose} characters={characters} seteandoTitle={seteandoTitle}/>
       </div>
    );
 }
