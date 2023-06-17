@@ -1,7 +1,10 @@
 .nav{
+    border: 1px  solid rgb(51, 0, 255);
+    border-radius: 14px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px  solid rgb(244, 244, 6);
-    background-color: rgb(132, 132, 218);
-}
+    margin-bottom: 5px;
+   
+} 
+

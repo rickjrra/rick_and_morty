@@ -1,0 +1,13 @@
+.about{
+    color: white;
+    display: grid;
+    place-items: center;
+
+}
+
+.about img{
+    border: 1px  solid black;
+    width: 500px 500px;
+    border-radius: 85px;
+    margin: 8px;
+}

@@ -65,6 +65,7 @@ const handleSubmit = (event)=>{
   return (
     <div className='login'>
       <form onSubmit={handleSubmit}>
+        <img src='https://r1.abcimg.es/resizer/resizer.php?imagen=https%3A%2F%2Fs3.abcstatics.com%2Fmedia%2Fcapitulos%2F000%2F212%2F918%2Frick-dobles-mi-mortijer-y-yo-1.jpg&nuevoancho=690&medio=abcg' alt='rick_and_morty' />
         <h1>Bienvenidos</h1>
           <label>Email: </label>
             <input type="text" key="email" name="email" value={inputs.email} onChange={handleChange} ></input>

@@ -1,15 +1,27 @@
 .login{
-    display: flex;
+    border: 1px  solid black;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
     text-align: center;
-    align-items: center;
     flex-direction: column;
-    background-color: blanchedalmond;
-    padding: 20px 1px;
-    border-radius: 4px;
-    width: 50%;
+    color: white;
+   
+}
+
+.login img{
+    border: 1px  solid black;
+    width: 160px;
+    border-radius: 80px;
+    margin: 8px;
 }
 
 .login button{
+    margin: 8px;
+}
+
+
+/* .login button{
     background-color: azure;
     border: 1.5px rebeccapurple solid ;
     border-radius: 4px;
@@ -22,7 +34,7 @@
     background-color: rgb(240, 240, 255);
     border: 1.5px rgb(239, 39, 13) solid ;
 
-}
+} */
 
 .login span{
     color: red;

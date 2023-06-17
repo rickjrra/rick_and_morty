@@ -1,8 +1,24 @@
 .cardsST{
+    border: 1px  solid rgb(51, 0, 255);
+    border-radius: 14px;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
-    justify-content: space-around;
-    justify-items: center;
+    grid-template-columns: repeat(
+       auto-fit,
+       minmax(
+        150px,
+        1fr
+       )
+    );
+    gap:16px;
+
+
+    /* background: linear-gradient(220.55deg, #FFE70B 0%, #27B643 100%);
+    background-image: url("C:\Users\rickj\Escritorio\RICK 39B\rick_and_morty\src\components\4k-space-wallpaper-2.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 14px; */
+
 }
 
 @media screen and (max-width:850px) {
