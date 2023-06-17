@@ -5,20 +5,43 @@ import axios from 'axios'
 import Cards from './components/Cards.jsx';
 import NavBar from './components/NavBar';
 
-import {Routes, Route} from 'react-router-dom';
-// import About from './components/About';
-// import Login from './components/Login';
-// import Detail from './components/Detail';
-
+import { Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Login from './components/Login.jsx';
+import About from './components/About.jsx';
+import Detail from './components/Detail.jsx';
+import ErrorNoFunciona from './components/ErrorNoFunciona.jsx';
 
 function App() {
 
+   const navigate = useNavigate();
+   const [access, setAccess] = useState(false);
+   const EMAIL = 'ejemplo@gmail.com';
+   const PASSWORD = 'unaPassword69*';
+
+   function login(inputs) {
+      if (inputs.password === PASSWORD && inputs.email === EMAIL) {
+         setAccess(true);
+         return navigate('/home');
+      }
+      return alert("no es el usuario")
+   };
+
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
+   function logOut(){
+      setAccess(false);
+      navigate("/");
+   }
+
    const [characters, setCharacters] = useState([])
 
-   const [title, setTitle] = useState("Bienvenidos")
-   const seteandoTitle = (str)=>{
-      setTitle(str)
-   }
+   // const [title, setTitle] = useState("Bienvenidos")
+   // const seteandoTitle = (str)=>{
+   //    setTitle(str)
+   // }
   
    function onSearch(id) {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
@@ -42,17 +65,20 @@ function App() {
       });
    }
 
+   const{pathname} = useLocation();
+
 
    return (
       <div className='App'>
-
-         <h1>{title}</h1>
-         <NavBar onSearch ={onSearch} />
+         {pathname === "/" ? null: <NavBar logOut={logOut} onSearch ={onSearch} />}
+         {/* <h1>{title}</h1> */}
+        
          <Routes>
-            {/* <Route path="/"element={<Login/>}></Route> */}
-            <Route path="/home" element={<Cards onClose={onClose} characters={characters} seteandoTitle={seteandoTitle}/>}></Route>
-            <Route path="/about" element={<About/>}></Route>
-            <Route path="/detail/:id" element={<Detail/>}></Route>
+            <Route path='/' element={<Login login={login} />} ></Route>
+            <Route path="/home" element={<Cards onClose={onClose} characters={characters} />}></Route> 
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/detail/:id" element={<Detail />}></Route>
+            <Route path="*" element={<ErrorNoFunciona />}></Route>
          </Routes>
          
       </div>
@@ -61,7 +87,6 @@ function App() {
 
 export default App;
 
-// Nav debe que aparecer en todas las rutas.
-// Cards debe aparecer solo en la ruta /home.
-// About debe aparecer solo en la ruta /about.
-// Detail debe aparecer solo en la ruta /detail/:id.
+/*
+//seteandoTitle={seteandoTitle} lia 55
+*/

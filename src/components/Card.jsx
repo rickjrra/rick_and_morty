@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+//import {useEffect} from "react";
 import './Card.css'
 import { Link } from "react-router-dom";
 
@@ -10,15 +10,15 @@ export default function Card({char, onClose, seteandoTitle}) { // obj
 
    const {id,name,gender,species,origin,image,status} = char
 
-   useEffect(()=>{
-      seteandoTitle('jujujujujuju')
-   },[])
+   // useEffect(()=>{
+   //    seteandoTitle('jujujujujuju')
+   // },[])
 
-   useEffect(()=>{
-      return function(){
-      seteandoTitle('bye bye bye')
-      };
-   },[]);
+   // useEffect(()=>{
+   //    return function(){
+   //    seteandoTitle('bye bye bye')
+   //    };
+   // },[]);
 
    return (
       <div className="cardST">

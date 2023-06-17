@@ -9,7 +9,8 @@ export default function SearchBar({onSearch}) {
       setId(event.target.value);
    }
    const randomChar = () =>{
-      
+      const numRan = Math.floor(Math.random() * 825) + 1;
+      onSearch(numRan);
    }
    return (
       <div className='sea'>
