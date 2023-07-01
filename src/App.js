@@ -11,6 +11,7 @@ import Login from './components/Login.jsx';
 import About from './components/About.jsx';
 import Detail from './components/Detail.jsx';
 import ErrorNoFunciona from './components/ErrorNoFunciona.jsx';
+import Favorites from './components/Favorites';
 
 function App() {
 
@@ -77,6 +78,7 @@ function App() {
             <Route path='/' element={<Login login={login} />} ></Route>
             <Route path="/home" element={<Cards onClose={onClose} characters={characters} />}></Route> 
             <Route path="/about" element={<About />}></Route>
+            <Route path="/favorites" element={<Favorites onClose={onClose} />}></Route>
             <Route path="/detail/:id" element={<Detail />}></Route>
             <Route path="*" element={<ErrorNoFunciona />}></Route>
          </Routes>

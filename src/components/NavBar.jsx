@@ -17,6 +17,10 @@ export default function NavBar({onSearch, logOut}) {
             <button>About</button>
             </Link>
 
+            <Link to='/favorites'>
+            <button>Favorites</button>
+            </Link>
+
             <button onClick={logOut}>log out</button>
     
             <SearchBar onSearch={onSearch} />
